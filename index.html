@@ -4,6 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DCC202 Semana 14 - Alemilson</title>
+
+    <script defer src="./main.js" type="module"></script>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .tabuleiro {
+            background: lightgreen;
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            width: calc(7 * 25px);
+            min-height: 25px;
+        }
+
+        .disco {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+        }
+        .disco[data-cor="branco"] {
+            background: radial-gradient(circle at top, white, beige);
+            border: 1px solid black;
+        }
+        .disco[data-cor="preto"] {
+            background: radial-gradient(circle at top, white, black);
+        }
+
+        .disco[data-posicao="0"] {
+            grid-column: 1;
+        }
+        .disco[data-posicao="1"] {
+            grid-column: 2;
+        }
+        .disco[data-posicao="2"] {
+            grid-column: 3;
+        }
+        .disco[data-posicao="3"] {
+            grid-column: 4;
+        }
+        .disco[data-posicao="4"] {
+            grid-column: 5;
+        }
+        .disco[data-posicao="5"] {
+            grid-column: 6;
+        }
+        .disco[data-posicao="6"] {
+            grid-column: 7;
+        }
+    </style>
 </head>
 <body>
     <h1 defer>DCC202 Semana 14</h1>
