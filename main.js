@@ -5,6 +5,7 @@ eH1.textContent = "DCC202 Semana 14";
 
 
 const eTabuleiro = criaTabuleiro();
+atualizaTabuleiro();
 document.body.append(eTabuleiro);
 
 function criaTabuleiro() {
@@ -19,4 +20,20 @@ function criaDisco(cor, posicao){
     novoDisco.dataset.cor = cor;
     novoDisco.dataset.posicao = posicao;
     return novoDisco;
+}
+
+function cliqueDisco(evento) {
+    const posicao = Number(evento.target.dataset.posicao);
+    selciona(posicao);
+    atualizaTabuleiro();
+}
+
+function atualizaTabuleiro() {
+    eTabuleiro.innerHTML = ''; 
+    const tabuleiro = getTabuleiro();
+    for (let i = 0; i < 7; i++) {
+        const disco = criaDisco(tabuleiro[i], i);
+        eTabuleiro.append(disco);
+        disco.addEventListener("click", cliqueDisco); 
+    }
 }
